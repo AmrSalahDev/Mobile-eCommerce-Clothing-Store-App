@@ -5,10 +5,10 @@
 
 # 🛍️ Mobile E-Commerce Clothing Store App
 
-**Flutter E-Commerce & Online Shopping app** built with **Bloc**, and **Clean Architecture**.  
+**A comprehensive Flutter E-Commerce & Online Shopping app** built with **Bloc**, **Clean Architecture**, and **modern Flutter best practices**.  
 
-📱 Designed for performance, scalability, and beautiful UI across Android devices.  
-⭐ Crafted for developers who want a ready-to-use, production-quality Flutter E-Commerce template.  
+📱 Designed for performance, scalability, and beautiful UI across Android and iOS devices.  
+⭐ Crafted for developers who want a ready-to-use, production-quality Flutter E-Commerce template with clean code architecture.  
 
 [![GitHub Stars](https://img.shields.io/github/stars/AmrSalahDev/Mobile-eCommerce-Clothing-Store-App?style=social)](https://github.com/AmrSalahDev/Mobile-eCommerce-Clothing-Store-App/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/AmrSalahDev/Mobile-eCommerce-Clothing-Store-App?style=social)](https://github.com/AmrSalahDev/Mobile-eCommerce-Clothing-Store-App/network/members)
@@ -21,12 +21,11 @@
 ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)
-![Platform](https://img.shields.io/badge/Platform-Android-blue.svg?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-Android%20|%20iOS-blue.svg?style=for-the-badge)
 ![State Management: Bloc](https://img.shields.io/badge/State%20Management-Bloc-purple.svg?style=for-the-badge)
-
+![Architecture: Clean](https://img.shields.io/badge/Architecture-Clean%20Architecture-orange.svg?style=for-the-badge)
 
 ---
-
 
 > ⚠️ **Project Status: In Development**  
 >
@@ -37,15 +36,41 @@
 ---
 
 ## 📑 Table of Contents
+- [🎯 Key Features](#-key-features)
 - [✨ Badges](#-badges)
 - [📊 App Architecture](#-app-architecture)
 - [🚀 Getting Started](#-getting-started)
 - [📦 Dependencies Used](#-dependencies-used)
 - [🎨 Figma Design](#-figma-design)
 - [📸 Screenshots](#-screenshots)
-- [🎥 Demo](#-demo)
 - [🛠️ Contributions](#️-contributions)
 - [📜 License](#-license)
+
+---
+
+## 🎯 Key Features
+
+### 👕 Product Browsing & Discovery
+- **Browse Clothing Catalog** - Explore a wide variety of clothing items with images, prices, and ratings
+- **Product Categories** - Filter products by clothing categories (T-Shirt, Dress, Jumpsuit, Tracksuit, Jacket, Sweater, etc.)
+- **Search Bar** - Quick search functionality to find products
+- **Product Details Page** - View detailed product information including description, pricing, and ratings
+
+### 🛒 Shopping Cart & Checkout
+- **Add to Cart** - Easy product selection with quantity management
+- **Shopping Cart** - Review items in cart and manage quantities
+- **Checkout Flow** - Streamlined checkout process with order summary
+
+### 🎨 User Experience
+- **Responsive Design** - Perfectly optimized for all screen sizes using ScreenUtil
+- **Smooth Animations** - Beautiful transitions and animations throughout the app
+- **Product Card UI** - Modern product cards with images, ratings, and prices
+- **Image Caching** - Optimized image loading with caching for better performance
+- **Shimmer Loading** - Elegant loading animations using shimmer effect
+- **Toast Notifications** - Real-time feedback for user actions
+- **Sticky Header** - Sticky navigation header on home page for better UX
+
+---
 
 ---
 
