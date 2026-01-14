@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_clothing/core/assets_gen/colors.gen.dart';
 import 'package:ecommerce_clothing/data/models/product_model.dart';
@@ -110,63 +111,57 @@ class QuantityPart extends StatefulWidget {
 }
 
 class _QuantityPartState extends State<QuantityPart> {
-  int quantity = 1;
+  int quantity = 1000;
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Row(
-          children: [
-            IconButton(
-              style: ButtonStyle(
-                side: WidgetStateProperty.all(
-                  BorderSide(color: ColorName.greyLight),
-                ),
-              ),
-              onPressed: () {
-                setState(() {
-                  if (quantity > 1) {
-                    quantity--;
-                  }
-                });
-              },
-              icon: Icon(
-                Icons.remove,
-                size: 20.sp,
-                color: ColorName.charcoalDark,
+        IconButton(
+          style: ButtonStyle(
+            side: WidgetStateProperty.all(
+              BorderSide(color: ColorName.greyLight),
+            ),
+          ),
+          onPressed: () {
+            setState(() {
+              if (quantity > 1) {
+                quantity--;
+              }
+            });
+          },
+          icon: Icon(Icons.remove, size: 20.sp, color: ColorName.charcoalDark),
+        ),
+        SizedBox(
+          width: 0.1.sw,
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              quantity.toString(),
+              maxLines: 1,
+              style: TextStyle(
+                fontSize: 18.sp,
+                fontWeight: FontWeight.bold,
+                color: ColorName.blackSoft,
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.0.w),
-              child: Text(
-                quantity.toString(),
-                style: TextStyle(
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.bold,
-                  color: ColorName.charcoalDark,
-                ),
-              ),
+          ),
+        ),
+
+        IconButton(
+          style: ButtonStyle(
+            side: WidgetStateProperty.all(
+              BorderSide(color: ColorName.greyLight),
             ),
-            IconButton(
-              style: ButtonStyle(
-                side: WidgetStateProperty.all(
-                  BorderSide(color: ColorName.greyLight),
-                ),
-              ),
-              onPressed: () {
-                setState(() {
-                  quantity++;
-                });
-              },
-              icon: Icon(
-                Icons.add,
-                size: 20.sp,
-                color: ColorName.charcoalDark,
-              ),
-            ),
-          ],
+          ),
+          onPressed: () {
+            setState(() {
+              quantity++;
+            });
+          },
+          icon: Icon(Icons.add, size: 20.sp, color: ColorName.charcoalDark),
         ),
       ],
     );
