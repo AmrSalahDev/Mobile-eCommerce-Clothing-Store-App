@@ -29,11 +29,11 @@ class ProductModel {
       rating: 4.5,
       isFavorite: true,
       image:
-          "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+          "https://images.unsplash.com/photo-1622925930212-b5b1606f0aab?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ),
     ProductModel(
       id: 2,
-      title: "Light Dress Bless",
+      title: "Red Dress Bless",
       description: "A light modern dress",
       price: 162,
       category: "Dress modern",
