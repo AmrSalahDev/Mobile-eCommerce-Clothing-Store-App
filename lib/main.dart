@@ -33,16 +33,22 @@ class EcommerceClothingApp extends StatelessWidget {
           routerConfig: AppRouter.router,
           debugShowCheckedModeBanner: false,
           title: 'Ecommerce Clothing',
-          theme: ThemeData(
-            scaffoldBackgroundColor: ColorName.greyVeryLight,
-            textSelectionTheme: TextSelectionThemeData(
-              cursorColor: ColorName.charcoalDark,
-              selectionColor: ColorName.greyLight,
-              selectionHandleColor: ColorName.charcoalDark,
-            ),
-          ),
+          theme: _buildThemeData(),
         ),
       ),
+    );
+  }
+
+  ThemeData _buildThemeData() {
+    final base = ThemeData.light();
+    return base.copyWith(
+      scaffoldBackgroundColor: ColorName.greyVeryLight,
+      textSelectionTheme: TextSelectionThemeData(
+        cursorColor: ColorName.charcoalDark,
+        selectionColor: ColorName.greyLight,
+        selectionHandleColor: ColorName.charcoalDark,
+      ),
+      primaryColor: ColorName.greyVeryLight,
     );
   }
 }

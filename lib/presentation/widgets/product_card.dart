@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_clothing/core/assets_gen/colors.gen.dart';
 import 'package:ecommerce_clothing/data/models/product_model.dart';
+import 'package:ecommerce_clothing/presentation/widgets/favorite_button.dart';
 import 'package:ecommerce_clothing/presentation/widgets/shimmer_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -34,25 +35,15 @@ class ProductCard extends StatelessWidget {
             Positioned(
               top: 10,
               right: 10,
-              child: Container(
-                width: 30,
-                height: 30,
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.8),
-                  shape: BoxShape.circle,
-                ),
-                child: IconButton(
-                  padding: EdgeInsets.zero,
-                  icon: Icon(
-                    
-                        Icons.favorite_border,
-                    color: Colors.black,
-                    size: 18,
-                  ),
-                  onPressed: () {
-                    // Toggle favorite logic would go here
-                  },
-                ),
+              child: FavoriteButton(
+                size: 24.sp,
+                padding: 7.w,
+                heartColor: Colors.white,
+                isFavorited: product.isFavorite,
+                backgroundColor: ColorName.charcoalDark,
+                onToggle: (isFav) {
+                  // Handle favorite toggle
+                },
               ),
             ),
           ],
