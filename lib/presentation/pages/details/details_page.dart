@@ -111,7 +111,7 @@ class QuantityPart extends StatefulWidget {
 }
 
 class _QuantityPartState extends State<QuantityPart> {
-  int quantity = 1000;
+  int quantity = 1;
 
   @override
   Widget build(BuildContext context) {
