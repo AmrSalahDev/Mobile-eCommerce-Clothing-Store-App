@@ -7,6 +7,7 @@ import 'package:lucide_icons_flutter/lucide_icons.dart';
 class CustomSearchBar extends StatefulWidget {
   const CustomSearchBar({super.key});
 
+
   @override
   State<CustomSearchBar> createState() => _CustomSearchBarState();
 }
@@ -35,8 +36,12 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
               ],
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.symmetric(
-                  vertical: 20.h,
+                  vertical: 20.w,
                   horizontal: 16.w,
+                ),
+                prefixIconConstraints: BoxConstraints(
+                  minWidth: 40.w,
+                  minHeight: 24.h,
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12.r),
@@ -71,7 +76,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
               color: ColorName.charcoalDark,
               borderRadius: BorderRadius.circular(12.r),
             ),
-            child: Icon(LucideIcons.settings2, color: Colors.white),
+            child: Icon(LucideIcons.settings2, color: Colors.white, size: 24.w),
           ),
         ],
       ),

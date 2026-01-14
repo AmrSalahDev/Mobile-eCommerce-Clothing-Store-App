@@ -46,7 +46,9 @@ class CustomHomeAppBar extends StatelessWidget {
             width: 50.w,
             height: 50.w,
             fit: BoxFit.cover,
-            imageUrl: "https://i.pravatar.cc/100?img=12",
+            //imageUrl: "https://i.pravatar.cc/100?img=12",
+            imageUrl:
+                "https://avatars.githubusercontent.com/u/87110578?s=96&v=4",
             errorWidget: (context, url, error) =>
                 ShimmerBox(width: 50.w, height: 50.w),
             placeholder: (context, url) =>
