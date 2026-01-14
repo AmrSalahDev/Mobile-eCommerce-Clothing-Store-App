@@ -1,4 +1,4 @@
-package com.example.ecommerce_clothing
+package com.blackcode.ecommerce_clothing_app
 
 import io.flutter.embedding.android.FlutterActivity
 
