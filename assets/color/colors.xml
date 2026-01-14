@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Very dark grey/brown -->
+  <color name="charcoal_dark">#292526</color>
+  
+  <!-- Medium grey -->
+  <color name="grey">#787676</color>
+  
+  <!-- Light grey -->
+  <color name="grey_light">#A3A1A2</color>
+  
+  <!-- Very light grey (almost white) -->
+  <color name="grey_very_light">#F2F2F2</color>
+  
+  <!-- Nearly black -->
+  <color name="black_soft">#121111</color>
+  <color name="base_shimmer_color">#E0E0E0</color>
+  <color name="highlightShimmerColor">#F5F5F5</color>
+</resources>
