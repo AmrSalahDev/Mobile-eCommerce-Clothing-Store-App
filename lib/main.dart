@@ -4,12 +4,15 @@ import 'package:ecommerce_clothing/core/di/di.dart';
 import 'package:ecommerce_clothing/core/routes/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_flutter_toolkit/ui/system/system_ui_wrapper.dart';
 import 'package:talker_bloc_logger/talker_bloc_logger_observer.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
 
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
@@ -21,6 +24,8 @@ Future<void> main() async {
   Bloc.observer = TalkerBlocObserver();
 
   runApp(const EcommerceClothingApp());
+  
+  FlutterNativeSplash.remove();
 }
 
 class EcommerceClothingApp extends StatelessWidget {
