@@ -3,6 +3,17 @@
 
 ---
 
+## ✨ Badges
+
+![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-Android%20|%20iOS-blue.svg?style=for-the-badge)
+![State Management: Bloc](https://img.shields.io/badge/State%20Management-Bloc-purple.svg?style=for-the-badge)
+![Architecture: Clean](https://img.shields.io/badge/Architecture-Clean%20Architecture-orange.svg?style=for-the-badge)
+
+---
+
 # 🛍️ Mobile E-Commerce Clothing Store App
 
 **A comprehensive Flutter E-Commerce & Online Shopping app** built with **Bloc**, **Clean Architecture**, and **modern Flutter best practices**.  
@@ -13,20 +24,6 @@
 [![GitHub Stars](https://img.shields.io/github/stars/AmrSalahDev/Mobile-eCommerce-Clothing-Store-App?style=social)](https://github.com/AmrSalahDev/Mobile-eCommerce-Clothing-Store-App/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/AmrSalahDev/Mobile-eCommerce-Clothing-Store-App?style=social)](https://github.com/AmrSalahDev/Mobile-eCommerce-Clothing-Store-App/network/members)
 [![GitHub Issues](https://img.shields.io/github/issues/AmrSalahDev/Mobile-eCommerce-Clothing-Store-App?style=social)](https://github.com/AmrSalahDev/Mobile-eCommerce-Clothing-Store-App/issues)
-
----
-
-## ✨ Badges
-
-![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=flutter&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)
-![Platform](https://img.shields.io/badge/Platform-Android%20|%20iOS-blue.svg?style=for-the-badge)
-![State Management: Bloc](https://img.shields.io/badge/State%20Management-Bloc-purple.svg?style=for-the-badge)
-![Architecture: Clean](https://img.shields.io/badge/Architecture-Clean%20Architecture-orange.svg?style=for-the-badge)
-
-
----
 
 ---
 
