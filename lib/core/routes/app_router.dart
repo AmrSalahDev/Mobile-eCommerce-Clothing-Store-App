@@ -7,7 +7,7 @@ import 'package:go_router/go_router.dart';
 
 class AppRouter {
   static GoRouter router = GoRouter(
-    initialLocation: AppPaths.checkout,
+    initialLocation: AppPaths.home,
     routes: [
       GoRoute(
         path: AppPaths.home,
@@ -15,7 +15,8 @@ class AppRouter {
       ),
       GoRoute(
         path: AppPaths.details,
-        builder: (context, state) => DetailsPage(product: state.extra as ProductModel),
+        builder: (context, state) =>
+            DetailsPage(product: state.extra as ProductModel),
       ),
       GoRoute(
         path: AppPaths.checkout,

@@ -115,7 +115,6 @@ class _CheckoutPageState extends State<CheckoutPage> {
                         title: AppStrings.discount,
                         amount: AppStrings.discountAmount,
                       ),
-
                       Divider(
                         color: Colors.grey.shade200,
                         thickness: 1,

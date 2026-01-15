@@ -1,7 +1,3 @@
-/// App String Constants
-/// This file contains all hardcoded strings used throughout the application
-/// centralized for easy management and internationalization (i18n)
-
 class AppStrings {
   // ======================== App Titles & Headers ========================
   static const String appTitle = 'Ecommerce Clothing';
