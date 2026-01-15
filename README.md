@@ -30,7 +30,8 @@
 ## 📥 Download APK
 
 👉 **Latest Android Release**  
-[⬇️ Download APK](https://github.com/AmrSalahDev/Mobile-eCommerce-Clothing-Store-App/releases/latest)
+<!--[⬇️ Download APK](https://github.com/AmrSalahDev/Mobile-eCommerce-Clothing-Store-App/releases/latest)-->
+
 <p align="center">
   <a href="https://github.com/AmrSalahDev/Mobile-eCommerce-Clothing-Store-App/releases/download/v1.0.0/app-release.apk">
     <img src="https://img.shields.io/badge/⬇️_Download_APK-v1.0.0-blue?style=for-the-badge&logo=android" />
