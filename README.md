@@ -25,6 +25,19 @@
 ![State Management: Bloc](https://img.shields.io/badge/State%20Management-Bloc-purple.svg?style=for-the-badge)
 ![Architecture: Clean](https://img.shields.io/badge/Architecture-Clean%20Architecture-orange.svg?style=for-the-badge)
 
+
+---
+
+---
+
+## 📥 Download APK
+
+👉 **Latest Android Release**  
+[⬇️ Download APK](https://github.com/AmrSalahDev/Mobile-eCommerce-Clothing-Store-App/releases/latest)
+
+⚠️ Enable *Install from unknown sources* on Android.
+
+
 ---
 
 ## 📑 Table of Contents
