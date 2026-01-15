@@ -2,6 +2,7 @@ import 'package:animated_emoji/emoji.dart';
 import 'package:animated_emoji/emojis.g.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_clothing/core/assets_gen/colors.gen.dart';
+import 'package:ecommerce_clothing/core/constant/app_strings.dart';
 import 'package:ecommerce_clothing/presentation/widgets/shimmer_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +20,7 @@ class CustomHomeAppBar extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Hello, Welcome",
+                  AppStrings.helloWelcome,
                   style: TextStyle(fontSize: 16.sp, color: ColorName.grey),
                 ),
                 AnimatedEmoji(
@@ -31,7 +32,7 @@ class CustomHomeAppBar extends StatelessWidget {
               ],
             ),
             Text(
-              "Amr Salah",
+              AppStrings.amrSalah,
               style: TextStyle(
                 fontSize: 24.sp,
                 color: ColorName.blackSoft,

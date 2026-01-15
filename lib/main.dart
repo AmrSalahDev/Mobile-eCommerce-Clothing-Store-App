@@ -8,6 +8,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_flutter_toolkit/ui/system/system_ui_wrapper.dart';
 import 'package:talker_bloc_logger/talker_bloc_logger_observer.dart';
+import 'package:ecommerce_clothing/core/constant/app_strings.dart';
 
 Future<void> main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +24,7 @@ Future<void> main() async {
   Bloc.observer = TalkerBlocObserver();
 
   runApp(const EcommerceClothingApp());
-  
+
   FlutterNativeSplash.remove();
 }
 
@@ -37,14 +38,14 @@ class EcommerceClothingApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: SystemUIWrapper(
-        statusBarColor: ColorName.greyVeryLight,
-        navigationBarColor: ColorName.greyVeryLight,
+        statusBarColor: ColorName.white,
+        navigationBarColor: ColorName.white,
         statusBarIconBrightness: Brightness.dark,
         navigationBarIconBrightness: Brightness.dark,
         child: MaterialApp.router(
           routerConfig: AppRouter.router,
           debugShowCheckedModeBanner: false,
-          title: 'Ecommerce Clothing',
+          title: AppStrings.appTitle,
           theme: _buildThemeData(),
         ),
       ),
@@ -54,13 +55,19 @@ class EcommerceClothingApp extends StatelessWidget {
   ThemeData _buildThemeData() {
     final base = ThemeData.light();
     return base.copyWith(
-      scaffoldBackgroundColor: ColorName.greyVeryLight,
+      scaffoldBackgroundColor: ColorName.white,
       textSelectionTheme: TextSelectionThemeData(
         cursorColor: ColorName.charcoalDark,
         selectionColor: ColorName.greyLight,
         selectionHandleColor: ColorName.charcoalDark,
       ),
-      primaryColor: ColorName.greyVeryLight,
+      appBarTheme: AppBarTheme(
+        backgroundColor: ColorName.white,
+        surfaceTintColor: ColorName.white,
+        foregroundColor: ColorName.blackSoft,
+        elevation: 0,
+      ),
+      primaryColor: ColorName.white,
     );
   }
 }

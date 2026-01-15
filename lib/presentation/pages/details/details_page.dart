@@ -1,8 +1,9 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_clothing/core/assets_gen/colors.gen.dart';
+import 'package:ecommerce_clothing/core/constant/app_strings.dart';
 import 'package:ecommerce_clothing/data/models/product_model.dart';
 import 'package:ecommerce_clothing/presentation/widgets/favorite_button.dart';
+import 'package:ecommerce_clothing/presentation/widgets/quantity_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:readmore/readmore.dart';
@@ -62,7 +63,7 @@ class _DetailsPageState extends State<DetailsPage> {
                             ),
                             10.horizontalSpace,
                             Text(
-                              "(7.932 reviews)",
+                              AppStrings.reviewsCount,
                               style: TextStyle(
                                 fontSize: 16.sp,
                                 color: Colors.blueAccent,
@@ -74,7 +75,7 @@ class _DetailsPageState extends State<DetailsPage> {
                       ],
                     ),
                     const Spacer(),
-                    QuantityPart(),
+                    QuantityButtons(),
                   ],
                 ),
                 15.verticalSpace,
@@ -103,71 +104,6 @@ class _DetailsPageState extends State<DetailsPage> {
   }
 }
 
-class QuantityPart extends StatefulWidget {
-  const QuantityPart({super.key});
-
-  @override
-  State<QuantityPart> createState() => _QuantityPartState();
-}
-
-class _QuantityPartState extends State<QuantityPart> {
-  int quantity = 1;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        IconButton(
-          style: ButtonStyle(
-            side: WidgetStateProperty.all(
-              BorderSide(color: ColorName.greyLight),
-            ),
-          ),
-          onPressed: () {
-            setState(() {
-              if (quantity > 1) {
-                quantity--;
-              }
-            });
-          },
-          icon: Icon(Icons.remove, size: 20.sp, color: ColorName.charcoalDark),
-        ),
-        SizedBox(
-          width: 0.1.sw,
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Text(
-              quantity.toString(),
-              maxLines: 1,
-              style: TextStyle(
-                fontSize: 18.sp,
-                fontWeight: FontWeight.bold,
-                color: ColorName.blackSoft,
-              ),
-            ),
-          ),
-        ),
-
-        IconButton(
-          style: ButtonStyle(
-            side: WidgetStateProperty.all(
-              BorderSide(color: ColorName.greyLight),
-            ),
-          ),
-          onPressed: () {
-            setState(() {
-              quantity++;
-            });
-          },
-          icon: Icon(Icons.add, size: 20.sp, color: ColorName.charcoalDark),
-        ),
-      ],
-    );
-  }
-}
-
 class SizesPart extends StatefulWidget {
   final ProductModel productModel;
   const SizesPart({super.key, required this.productModel});
@@ -185,7 +121,7 @@ class _SizesPartState extends State<SizesPart> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Choose Size",
+          AppStrings.chooseSize,
           style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
         ),
         10.verticalSpace,
@@ -252,7 +188,7 @@ class _ColorsPartState extends State<ColorsPart> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Choose Color",
+          AppStrings.chooseColor,
           style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
         ),
         10.verticalSpace,
@@ -312,8 +248,8 @@ class DescriptionPart extends StatelessWidget {
       '${widget.product.description} ',
       trimMode: TrimMode.Line,
       trimLines: 2,
-      trimCollapsedText: "Read More...",
-      trimExpandedText: "Show Less",
+      trimCollapsedText: AppStrings.readMore,
+      trimExpandedText: AppStrings.showLess,
       style: TextStyle(
         fontWeight: FontWeight.normal,
         fontSize: 14.sp,
@@ -366,7 +302,7 @@ class AddToCartButton extends StatelessWidget {
             ),
             10.horizontalSpace,
             Text(
-              "Add to Cart | \$${widget.product.price}",
+              "${AppStrings.addToCart} | \$${widget.product.price}",
               style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.bold,
@@ -375,7 +311,7 @@ class AddToCartButton extends StatelessWidget {
             ),
             5.horizontalSpace,
             Text(
-              "\$190.99",
+              AppStrings.strikeoutPrice,
               style: TextStyle(
                 decoration: TextDecoration.lineThrough,
                 decorationColor: Colors.white,

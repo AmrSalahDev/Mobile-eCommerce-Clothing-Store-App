@@ -1,5 +1,5 @@
-
 import 'package:ecommerce_clothing/core/assets_gen/colors.gen.dart';
+import 'package:ecommerce_clothing/data/models/category_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,16 +11,7 @@ class CategoriesBar extends StatefulWidget {
 }
 
 class _CategoriesBarState extends State<CategoriesBar> {
-  final List<String> categories = [
-    "All Items",
-    "Dress",
-    "T - Shirt",
-    "Jeans",
-    "Jumpsuit",
-    "Skirt",
-    "Shorts",
-  ];
-  String selectedCategory = "All Items";
+  int selectedCategory = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -28,17 +19,17 @@ class _CategoriesBarState extends State<CategoriesBar> {
       height: 50.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: categories.length,
+        itemCount: CategoryModel.getCategories().length,
         clipBehavior: Clip.none,
         itemBuilder: (context, index) {
-          final category = categories[index];
-          final isSelected = selectedCategory == category;
+          final currentSelectedCategory = index;
+          final isSelected = selectedCategory == currentSelectedCategory;
           return Padding(
             padding: const EdgeInsets.only(right: 12.0),
             child: GestureDetector(
               onTap: () {
                 setState(() {
-                  selectedCategory = category;
+                  selectedCategory = currentSelectedCategory;
                 });
               },
               child: Container(
@@ -59,7 +50,7 @@ class _CategoriesBarState extends State<CategoriesBar> {
                   ),
                 ),
                 child: Text(
-                  category,
+                  CategoryModel.getCategories()[index].name,
                   style: TextStyle(
                     color: isSelected ? Colors.white : ColorName.blackSoft,
                     fontWeight: FontWeight.w500,

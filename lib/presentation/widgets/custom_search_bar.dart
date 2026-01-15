@@ -1,12 +1,12 @@
 import 'package:animated_hint_textfield/animated_hint_textfield.dart';
 import 'package:ecommerce_clothing/core/assets_gen/colors.gen.dart';
+import 'package:ecommerce_clothing/core/constant/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 class CustomSearchBar extends StatefulWidget {
   const CustomSearchBar({super.key});
-
 
   @override
   State<CustomSearchBar> createState() => _CustomSearchBarState();
@@ -27,12 +27,12 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                 color: Colors.grey.shade400,
               ),
               hintTexts: [
-                'Search for "Dress"',
-                'Search for "T-Shirt"',
-                'Search for "Jeans"',
-                'Search for "Jumpsuit"',
-                'Search for "Skirt"',
-                'Search for "Shorts"',
+                AppStrings.searchForDress,
+                AppStrings.searchForTShirt,
+                AppStrings.searchForJeans,
+                AppStrings.searchForJumpsuit,
+                AppStrings.searchForSkirt,
+                AppStrings.searchForShorts,
               ],
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.symmetric(

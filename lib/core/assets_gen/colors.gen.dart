@@ -34,4 +34,7 @@ class ColorName {
 
   /// Color: #F5F5F5
   static const Color highlightShimmerColor = Color(0xFFF5F5F5);
+
+  /// Color: #FFFFFF
+  static const Color white = Color(0xFFFFFFFF);
 }
