@@ -29,57 +29,17 @@ class _DetailsPageState extends State<DetailsPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 20.verticalSpace,
-                ProductImage(widget: widget),
+                _ProductImage(widget: widget),
                 20.verticalSpace,
                 Row(
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          width: 0.5.sw,
-                          child: Text(
-                            widget.product.title,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                              fontSize: 24.sp,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        10.verticalSpace,
-                        Row(
-                          children: [
-                            Icon(Icons.star, color: Colors.amber, size: 24.sp),
-                            4.horizontalSpace,
-                            Text(
-                              "${widget.product.rating}",
-                              style: TextStyle(
-                                fontSize: 16.sp,
-                                color: ColorName.charcoalDark,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            10.horizontalSpace,
-                            Text(
-                              AppStrings.reviewsCount,
-                              style: TextStyle(
-                                fontSize: 16.sp,
-                                color: Colors.blueAccent,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                    _ProductInfoPart(widget: widget),
                     const Spacer(),
                     QuantityButtons(),
                   ],
                 ),
                 15.verticalSpace,
-                DescriptionPart(widget: widget),
+                _DescriptionPart(widget: widget),
                 20.verticalSpace,
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -87,9 +47,9 @@ class _DetailsPageState extends State<DetailsPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizesPart(productModel: widget.product),
+                      _SizesPart(productModel: widget.product),
                       20.horizontalSpace,
-                      ColorsPart(productModel: widget.product),
+                      _ColorsPart(productModel: widget.product),
                     ],
                   ),
                 ),
@@ -99,20 +59,73 @@ class _DetailsPageState extends State<DetailsPage> {
           ),
         ),
       ),
-      bottomNavigationBar: AddToCartButton(widget: widget),
+      bottomNavigationBar: _AddToCartButton(widget: widget),
     );
   }
 }
 
-class SizesPart extends StatefulWidget {
-  final ProductModel productModel;
-  const SizesPart({super.key, required this.productModel});
+class _ProductInfoPart extends StatelessWidget {
+  const _ProductInfoPart({
+    required this.widget,
+  });
+
+  final DetailsPage widget;
 
   @override
-  State<SizesPart> createState() => _SizesPartState();
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          width: 0.5.sw,
+          child: Text(
+            widget.product.title,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontSize: 24.sp,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        10.verticalSpace,
+        Row(
+          children: [
+            Icon(Icons.star, color: Colors.amber, size: 24.sp),
+            4.horizontalSpace,
+            Text(
+              "${widget.product.rating}",
+              style: TextStyle(
+                fontSize: 16.sp,
+                color: ColorName.charcoalDark,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            10.horizontalSpace,
+            Text(
+              AppStrings.reviewsCount,
+              style: TextStyle(
+                fontSize: 16.sp,
+                color: Colors.blueAccent,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
 }
 
-class _SizesPartState extends State<SizesPart> {
+class _SizesPart extends StatefulWidget {
+  final ProductModel productModel;
+  const _SizesPart({required this.productModel});
+
+  @override
+  State<_SizesPart> createState() => _SizesPartState();
+}
+
+class _SizesPartState extends State<_SizesPart> {
   int selectedCategory = 2;
 
   @override
@@ -171,15 +184,15 @@ class _SizesPartState extends State<SizesPart> {
   }
 }
 
-class ColorsPart extends StatefulWidget {
+class _ColorsPart extends StatefulWidget {
   final ProductModel productModel;
-  const ColorsPart({super.key, required this.productModel});
+  const _ColorsPart({required this.productModel});
 
   @override
-  State<ColorsPart> createState() => _ColorsPartState();
+  State<_ColorsPart> createState() => _ColorsPartState();
 }
 
-class _ColorsPartState extends State<ColorsPart> {
+class _ColorsPartState extends State<_ColorsPart> {
   int selectedCategory = 2;
 
   @override
@@ -237,8 +250,8 @@ class _ColorsPartState extends State<ColorsPart> {
   }
 }
 
-class DescriptionPart extends StatelessWidget {
-  const DescriptionPart({super.key, required this.widget});
+class _DescriptionPart extends StatelessWidget {
+  const _DescriptionPart({required this.widget});
 
   final DetailsPage widget;
 
@@ -269,8 +282,8 @@ class DescriptionPart extends StatelessWidget {
   }
 }
 
-class AddToCartButton extends StatelessWidget {
-  const AddToCartButton({super.key, required this.widget});
+class _AddToCartButton extends StatelessWidget {
+  const _AddToCartButton({required this.widget});
 
   final DetailsPage widget;
 
@@ -328,8 +341,8 @@ class AddToCartButton extends StatelessWidget {
   }
 }
 
-class ProductImage extends StatelessWidget {
-  const ProductImage({super.key, required this.widget});
+class _ProductImage extends StatelessWidget {
+  const _ProductImage({required this.widget});
 
   final DetailsPage widget;
 

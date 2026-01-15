@@ -17,7 +17,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +28,7 @@ class _HomePageState extends State<HomePage> {
             slivers: [
               SliverStickyHeader(
                 header: Container(
-                  color: ColorName.greyVeryLight,
+                  color: ColorName.white,
                   child: Column(
                     children: [
                       16.verticalSpace,

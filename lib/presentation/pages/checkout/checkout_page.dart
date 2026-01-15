@@ -30,101 +30,16 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 header: Container(
                   color: ColorName.white,
                   padding: EdgeInsets.only(top: 16.h, bottom: 10.h),
-                  child: CustomCheckoutAppBar(),
+                  child: _CustomCheckoutAppBar(),
                 ),
                 sliver: SliverToBoxAdapter(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       30.verticalSpace,
-                      ListView.separated(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, index) {
-                          final product = ProductModel.products[index];
-                          return CheckoutProductCard(product: product);
-                        },
-                        separatorBuilder: (context, index) {
-                          return Divider(
-                            color: Colors.grey.shade200,
-                            thickness: 1,
-                            height: 30.h,
-                          );
-                        },
-                        itemCount: 3,
-                      ),
+                      _CartProductsListView(),
                       35.verticalSpace,
-                      Text(
-                        AppStrings.shippingInformation,
-                        style: TextStyle(
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w500,
-                          color: ColorName.blackSoft,
-                        ),
-                      ),
-                      20.verticalSpace,
-                      Container(
-                        width: double.infinity,
-                        height: 80.h,
-                        padding: EdgeInsets.all(16.w),
-                        decoration: BoxDecoration(
-                          color: ColorName.greyVeryLight,
-                          borderRadius: BorderRadius.circular(20.r),
-                        ),
-                        child: Row(
-                          children: [
-                            Assets.icons.visaLogo.svg(
-                              width: 40.w,
-                              height: 40.w,
-                              colorFilter: const ColorFilter.mode(
-                                Colors.indigo,
-                                BlendMode.srcIn,
-                              ),
-                            ),
-                            16.horizontalSpace,
-                            Expanded(
-                              child: Text(
-                                AppStrings.cardNumber,
-                                style: TextStyle(
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w500,
-                                  color: ColorName.blackSoft,
-                                ),
-                              ),
-                            ),
-                            Icon(
-                              Icons.keyboard_arrow_down,
-                              size: 30.w,
-                              color: ColorName.charcoalDark,
-                            ),
-                          ],
-                        ),
-                      ),
-                      20.verticalSpace,
-                      _CustomRow(
-                        title: AppStrings.totalItems,
-                        amount: AppStrings.totalAmount,
-                      ),
-                      15.verticalSpace,
-                      _CustomRow(
-                        title: AppStrings.shippingFee,
-                        amount: AppStrings.shippingFeeAmount,
-                      ),
-                      15.verticalSpace,
-                      _CustomRow(
-                        title: AppStrings.discount,
-                        amount: AppStrings.discountAmount,
-                      ),
-                      Divider(
-                        color: Colors.grey.shade200,
-                        thickness: 1,
-                        height: 30.h,
-                      ),
-                      15.verticalSpace,
-                      _CustomRow(
-                        title: AppStrings.subTotal,
-                        amount: AppStrings.subTotalAmount,
-                      ),
+                      _CheckoutInfoPart(),
                       50.verticalSpace,
                     ],
                   ),
@@ -134,36 +49,144 @@ class _CheckoutPageState extends State<CheckoutPage> {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        padding: EdgeInsets.only(
-          left: 16.w,
-          right: 16.w,
-          bottom: 10.h,
-          top: 10.h,
+      bottomNavigationBar: _PayButton(),
+    );
+  }
+}
+
+class _CheckoutInfoPart extends StatelessWidget {
+  const _CheckoutInfoPart();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          AppStrings.shippingInformation,
+          style: TextStyle(
+            fontSize: 18.sp,
+            fontWeight: FontWeight.w500,
+            color: ColorName.blackSoft,
+          ),
         ),
-        color: ColorName.white,
-        child: SizedBox(
+        20.verticalSpace,
+        Container(
           width: double.infinity,
-          height: 60.h,
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: ColorName.charcoalDark,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(50.r),
+          height: 80.h,
+          padding: EdgeInsets.all(16.w),
+          decoration: BoxDecoration(
+            color: ColorName.greyVeryLight,
+            borderRadius: BorderRadius.circular(20.r),
+          ),
+          child: Row(
+            children: [
+              Assets.icons.visaLogo.svg(
+                width: 40.w,
+                height: 40.w,
+                colorFilter: const ColorFilter.mode(
+                  Colors.indigo,
+                  BlendMode.srcIn,
+                ),
               ),
+              16.horizontalSpace,
+              Expanded(
+                child: Text(
+                  AppStrings.cardNumber,
+                  style: TextStyle(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w500,
+                    color: ColorName.blackSoft,
+                  ),
+                ),
+              ),
+              Icon(
+                Icons.keyboard_arrow_down,
+                size: 30.w,
+                color: ColorName.charcoalDark,
+              ),
+            ],
+          ),
+        ),
+        20.verticalSpace,
+        _CustomRow(
+          title: AppStrings.totalItems,
+          amount: AppStrings.totalAmount,
+        ),
+        15.verticalSpace,
+        _CustomRow(
+          title: AppStrings.shippingFee,
+          amount: AppStrings.shippingFeeAmount,
+        ),
+        15.verticalSpace,
+        _CustomRow(
+          title: AppStrings.discount,
+          amount: AppStrings.discountAmount,
+        ),
+        Divider(color: Colors.grey.shade200, thickness: 1, height: 30.h),
+        15.verticalSpace,
+        _CustomRow(
+          title: AppStrings.subTotal,
+          amount: AppStrings.subTotalAmount,
+        ),
+      ],
+    );
+  }
+}
+
+class _PayButton extends StatelessWidget {
+  const _PayButton();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(
+        left: 16.w,
+        right: 16.w,
+        bottom: 10.h,
+        top: 10.h,
+      ),
+      color: ColorName.white,
+      child: SizedBox(
+        width: double.infinity,
+        height: 60.h,
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: ColorName.charcoalDark,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50.r),
             ),
-            onPressed: () {},
-            child: Text(
-              AppStrings.pay,
-              style: TextStyle(
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w600,
-                color: ColorName.white,
-              ),
+          ),
+          onPressed: () {},
+          child: Text(
+            AppStrings.pay,
+            style: TextStyle(
+              fontSize: 18.sp,
+              fontWeight: FontWeight.w600,
+              color: ColorName.white,
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class _CartProductsListView extends StatelessWidget {
+  const _CartProductsListView();
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.separated(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemBuilder: (context, index) {
+        final product = ProductModel.products[index];
+        return _CheckoutProductCard(product: product);
+      },
+      separatorBuilder: (context, index) {
+        return Divider(color: Colors.grey.shade200, thickness: 1, height: 30.h);
+      },
+      itemCount: 3,
     );
   }
 }
@@ -199,15 +222,15 @@ class _CustomRow extends StatelessWidget {
   }
 }
 
-class CheckoutProductCard extends StatefulWidget {
+class _CheckoutProductCard extends StatefulWidget {
   final ProductModel product;
-  const CheckoutProductCard({super.key, required this.product});
+  const _CheckoutProductCard({required this.product});
 
   @override
-  State<CheckoutProductCard> createState() => _CheckoutProductCardState();
+  State<_CheckoutProductCard> createState() => _CheckoutProductCardState();
 }
 
-class _CheckoutProductCardState extends State<CheckoutProductCard> {
+class _CheckoutProductCardState extends State<_CheckoutProductCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -290,8 +313,8 @@ class _CheckoutProductCardState extends State<CheckoutProductCard> {
   }
 }
 
-class CustomCheckoutAppBar extends StatelessWidget {
-  const CustomCheckoutAppBar({super.key});
+class _CustomCheckoutAppBar extends StatelessWidget {
+  const _CustomCheckoutAppBar();
 
   @override
   Widget build(BuildContext context) {

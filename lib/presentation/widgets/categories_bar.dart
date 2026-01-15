@@ -39,9 +39,7 @@ class _CategoriesBarState extends State<CategoriesBar> {
                 ),
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: isSelected
-                      ? ColorName.charcoalDark
-                      : ColorName.greyVeryLight,
+                  color: isSelected ? ColorName.charcoalDark : ColorName.white,
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
                     color: isSelected
